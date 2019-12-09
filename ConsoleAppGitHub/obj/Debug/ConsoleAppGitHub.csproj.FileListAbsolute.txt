@@ -1,0 +1,7 @@
+C:\Users\GBV3983\source\repos\ConsoleAppGitHub\ConsoleAppGitHub\bin\Debug\ConsoleAppGitHub.exe.config
+C:\Users\GBV3983\source\repos\ConsoleAppGitHub\ConsoleAppGitHub\bin\Debug\ConsoleAppGitHub.exe
+C:\Users\GBV3983\source\repos\ConsoleAppGitHub\ConsoleAppGitHub\bin\Debug\ConsoleAppGitHub.pdb
+C:\Users\GBV3983\source\repos\ConsoleAppGitHub\ConsoleAppGitHub\obj\Debug\ConsoleAppGitHub.csprojAssemblyReference.cache
+C:\Users\GBV3983\source\repos\ConsoleAppGitHub\ConsoleAppGitHub\obj\Debug\ConsoleAppGitHub.csproj.CoreCompileInputs.cache
+C:\Users\GBV3983\source\repos\ConsoleAppGitHub\ConsoleAppGitHub\obj\Debug\ConsoleAppGitHub.exe
+C:\Users\GBV3983\source\repos\ConsoleAppGitHub\ConsoleAppGitHub\obj\Debug\ConsoleAppGitHub.pdb
