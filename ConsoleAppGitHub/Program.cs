@@ -11,6 +11,8 @@ namespace ConsoleAppGitHub
         static void Main(string[] args)
         {
             Console.WriteLine("This is first version of app");
+
+            Console.WriteLine("");
         }
     }
 }
