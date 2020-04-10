@@ -5,10 +5,8 @@ using System.Data.SqlClient;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using LiveCharts;
-using LiveCharts.Wpf;
 
-namespace WpfApp6
+namespace OIdataViewer
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -144,7 +142,6 @@ namespace WpfApp6
                 }
             }
         }
-        public SeriesCollection SeriesCollection { get; set; }
         List<double> Striks { get; set; }
         List<string> Expiries { get; set; }
 
@@ -215,22 +212,6 @@ namespace WpfApp6
                         niftyList.Add(getNifty(Convert.ToDouble(dt.Rows[i]["nifty"])));
                         niftyTime.Add(Convert.ToDouble(hr + min));
                     }
-
-
-                    SeriesCollection = new SeriesCollection
-                {
-                    new LineSeries
-                    {
-                        Values = new ChartValues<decimal>(niftyList)
-                    },
-                    new ColumnSeries
-                    {
-                        Values = new ChartValues<double>(niftyTime)
-                    }
-                };
-
-
-
                 }
             }
 
@@ -295,22 +276,6 @@ namespace WpfApp6
                         niftyList.Add(getNifty(Convert.ToDouble(dt.Rows[i]["nifty"])));
                         niftyTime.Add(Convert.ToDouble(hr + min));
                     }
-
-
-                    SeriesCollection = new SeriesCollection
-                {
-                    new LineSeries
-                    {
-                        Values = new ChartValues<decimal>(niftyList)
-                    },
-                    new ColumnSeries
-                    {
-                        Values = new ChartValues<double>(niftyTime)
-                    }
-                };
-
-
-
                 }
             }
 
