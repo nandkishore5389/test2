@@ -1,0 +1,212 @@
+﻿<Window x:Class="WpfApp6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6"
+        mc:Ignorable="d"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf.Charts.Base;assembly=LiveCharts.Wpf"
+        xmlns:lvc1="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="IntraDay">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox Margin="1" SelectionChanged="CmbStrick_SelectionChanged" Name="cmbStrick" Height="25"></ComboBox>
+                        <ComboBox Margin="1" SelectionChanged="CmbExpiry_SelectionChanged" Name="cmbExpiry" Height="25"></ComboBox>
+                        <ComboBox Margin="1" SelectionChanged="CmbDate_SelectionChanged" Name="cmbDate" Height="25"></ComboBox>
+                    </StackPanel>
+                    <ScrollViewer Grid.Row="1">
+
+                        <StackPanel>
+                            <ListView Name="listview" Visibility="Visible">
+                                <ListView.View>
+                                    <GridView AllowsColumnReorder="true"  ColumnHeaderToolTip="Employee Information">
+                                        <GridViewColumn  DisplayMemberBinding="{Binding Path=Date}" Header="Date" Width="105"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=nifty}" Header="nifty" Width="50"/>
+
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_OI}" Header="call_OI" Width="90"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_COI}" Header="call_COI" Width="80"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_Volume}" Header="call_Volume" Width="70"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_IV}" Header="call_IV" Width="40"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_LTP}" Header="call_LTP" Width="40"/>
+
+                                        <GridViewColumn Header="" Width="20">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="|" TextWrapping="Wrap" Margin="0"></TextBlock>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_LTP}" Header="put_LTP" Width="40"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_IV}" Header="put_IV" Width="40"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_Volume}" Header="put_Volume" Width="70"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_COI}" Header="put_COI" Width="80"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_OI}" Header="put_OI" Width="90"/>
+
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=signal}" Header="signal" Width="100"/>
+                                    </GridView>
+
+                                </ListView.View>
+                            </ListView>
+                        </StackPanel>
+                    </ScrollViewer>
+
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <ComboBox Margin="1" SelectionChanged="CmbStrick_SelectionChanged2" Name="cmbStrick2" Height="25"></ComboBox>
+                        <ComboBox Margin="1" SelectionChanged="CmbExpiry_SelectionChanged2" Name="cmbExpiry2" Height="25"></ComboBox>
+                        <ComboBox Margin="1" SelectionChanged="CmbDate_SelectionChanged2" Name="cmbDate2" Height="25"></ComboBox>
+                    </StackPanel>
+                    <ScrollViewer Grid.Column="1" Grid.Row="1">
+
+                        <StackPanel>
+                            <ListView Name="listview2" Visibility="Visible">
+                                <ListView.View>
+                                    <GridView AllowsColumnReorder="true"  ColumnHeaderToolTip="Employee Information">
+                                        <GridViewColumn  DisplayMemberBinding="{Binding Path=Date}" Header="Date" Width="105"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=nifty}" Header="nifty" Width="50"/>
+
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_OI}" Header="call_OI" Width="90"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_COI}" Header="call_COI" Width="80"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_Volume}" Header="call_Volume" Width="70"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_IV}" Header="call_IV" Width="40"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_LTP}" Header="call_LTP" Width="40"/>
+
+                                        <GridViewColumn Header="" Width="20">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="|" TextWrapping="Wrap" Margin="0"></TextBlock>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_LTP}" Header="put_LTP" Width="40"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_IV}" Header="put_IV" Width="40"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_Volume}" Header="put_Volume" Width="70"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_COI}" Header="put_COI" Width="80"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_OI}" Header="put_OI" Width="90"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=signal}" Header="signal" Width="100"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <StackPanel Height="250" Grid.Row="2">
+                        <!--<lvc1:CartesianChart  Height="250" Series="{Binding SeriesCollection}" />-->
+
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Daily">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox Margin="1" SelectionChanged="CmbStrick_SelectionChanged3" Name="cmbStrick3" Height="25"></ComboBox>
+                        <ComboBox Margin="1" SelectionChanged="CmbExpiry_SelectionChanged3" Name="cmbExpiry3" Height="25"></ComboBox>
+                    </StackPanel>
+                    <ScrollViewer Grid.Row="1">
+
+                        <StackPanel>
+                            <ListView Name="listview3" Visibility="Visible">
+                                <ListView.View>
+                                    <GridView AllowsColumnReorder="true"  ColumnHeaderToolTip="Employee Information">
+                                        <GridViewColumn  DisplayMemberBinding="{Binding Path=Date}" Header="Date" Width="105"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=nifty}" Header="nifty" Width="50"/>
+
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_OI}" Header="call_OI" Width="90"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_COI}" Header="call_COI" Width="80"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_Volume}" Header="call_Volume" Width="70"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_IV}" Header="call_IV" Width="40"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_LTP}" Header="call_LTP" Width="40"/>
+
+                                        <GridViewColumn Header="" Width="20">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="|" TextWrapping="Wrap" Margin="0"></TextBlock>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_LTP}" Header="put_LTP" Width="40"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_IV}" Header="put_IV" Width="40"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_Volume}" Header="put_Volume" Width="70"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_COI}" Header="put_COI" Width="80"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_OI}" Header="put_OI" Width="90"/>
+
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=signal}" Header="signal" Width="100"/>
+                                    </GridView>
+
+                                </ListView.View>
+                            </ListView>
+                        </StackPanel>
+                    </ScrollViewer>
+
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <ComboBox Margin="1" SelectionChanged="CmbStrick_SelectionChanged4" Name="cmbStrick4" Height="25"></ComboBox>
+                        <ComboBox Margin="1" SelectionChanged="CmbExpiry_SelectionChanged4" Name="cmbExpiry4" Height="25"></ComboBox>
+                    </StackPanel>
+                    <ScrollViewer Grid.Column="1" Grid.Row="1">
+
+                        <StackPanel>
+                            <ListView Name="listview4" Visibility="Visible">
+                                <ListView.View>
+                                    <GridView AllowsColumnReorder="true"  ColumnHeaderToolTip="Employee Information">
+                                        <GridViewColumn  DisplayMemberBinding="{Binding Path=Date}" Header="Date" Width="105"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=nifty}" Header="nifty" Width="50"/>
+
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_OI}" Header="call_OI" Width="90"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_COI}" Header="call_COI" Width="80"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_Volume}" Header="call_Volume" Width="70"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_IV}" Header="call_IV" Width="40"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=call_LTP}" Header="call_LTP" Width="40"/>
+
+                                        <GridViewColumn Header="" Width="20">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="|" TextWrapping="Wrap" Margin="0"></TextBlock>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_LTP}" Header="put_LTP" Width="40"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_IV}" Header="put_IV" Width="40"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_Volume}" Header="put_Volume" Width="70"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_COI}" Header="put_COI" Width="80"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=put_OI}" Header="put_OI" Width="90"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=signal}" Header="signal" Width="100"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <StackPanel Height="250" Grid.Row="2">
+                        <!--<lvc1:CartesianChart  Height="250" Series="{Binding SeriesCollection}" />-->
+
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
